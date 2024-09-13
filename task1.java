@@ -13,13 +13,13 @@ public class task1 {
             int numbertoguess = random.nextInt(max_number - min_number+1)+min_number;
             int attempts = 0;
             boolean guessedcorrectly = false;
-            System.out.println("Guess the number between"+min_number+" and "+max_number+":");
+            System.out.println("Guess the number between " +   min_number + " and " + max_number +":");
             while (attempts<max_attempts) {
                 System.out.print("Enter your guess: ");
                 int guess = scanner.nextInt();
                 attempts++;
-                if (guess == numberToGuess) {
-                    System.out.println("Congratulations! You guessed the number " +numbertoguess+ " in " + attempts + " attempts.");
+                if (guess ==numbertoguess ) {
+                    System.out.println("Congratulations! You guessed correctly " +numbertoguess+ " in " + attempts + " attempts.");
                      guessedcorrectly = true;
                     break;
                 } else if (guess < numbertoguess) {
@@ -29,11 +29,11 @@ public class task1 {
                 }
             }
             if (!guessedcorrectly) {
-                System.out.println("Sorry, you've used all " + max_attempts + " attempts. The correct number is " + numbertoguess+ ".");
+                System.out.println("Sorry, you've finished all " + max_attempts + " attempts. The correct number is " + numbertoguess+ ".");
             }
             System.out.print("Do you want to play another round? (yes/no):");
             String response = scanner.next().trim().toLowerCase();
-            playAgain = response.equals("yes");
+            playagain = response.equals("yes");
         }
         scanner.close();
     }
