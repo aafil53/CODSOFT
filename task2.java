@@ -26,6 +26,5 @@ public class task2 {
         System.out.println("Total Marks: " + total);
         System.out.println("Percentage: " + percentage + "%");
         System.out.println("Grade: " + grade);
-        sc.close();
     }
 }
