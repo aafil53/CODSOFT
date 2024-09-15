@@ -19,6 +19,5 @@ public class task1 {
             }
         }
         System.out.println("Sorry, you finished your attempts! The number is " + numberguess );
-        sc.close();
     }
 }
