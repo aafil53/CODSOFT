@@ -1,40 +1,25 @@
-//Java program to guess the number
+//Java program to guess a number
 import java.util.Random;
 import java.util.Scanner;
 public class task1 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         Random random = new Random();
-        int min_number = 1;
-        int max_number = 100;
-        int max_attempts = 10;
-        boolean playagain = true;
-        while (playagain) {
-            int numbertoguess = random.nextInt(max_number - min_number+1)+min_number;
-            int attempts = 0;
-            boolean guessedcorrectly = false;
-            System.out.println("Guess the number between " +   min_number + " and " + max_number +":");
-            while (attempts<max_attempts) {
-                System.out.print("Enter your guess: ");
-                int guess = scanner.nextInt();
-                attempts++;
-                if (guess ==numbertoguess ) {
-                    System.out.println("Congratulations! You guessed correctly " +numbertoguess+ " in " + attempts + " attempts.");
-                     guessedcorrectly = true;
-                    break;
-                } else if (guess < numbertoguess) {
-                    System.out.println("Too low!");
-                } else {
-                    System.out.println("Too high!");
-                }
+        int numberguess = random.nextInt(100) + 1; 
+        int attempts = 10;
+        System.out.println("Enter a number between 1 and 100.");
+        for (int i = 1; i <= attempts; i++) {
+            System.out.print(" Enter your guess:");
+            int guess = sc.nextInt();
+            if (guess < numberguess) {
+                System.out.println("Very low!");
+            } else if (guess > numberguess) {
+                System.out.println("Very high!");
+            } else {
+                System.out.println("Congratulations! You guessed the number in " + i + " attempts!");
             }
-            if (!guessedcorrectly) {
-                System.out.println("Sorry, you've finished all " + max_attempts + " attempts. The correct number is " + numbertoguess+ ".");
-            }
-            System.out.print("Do you want to play another round? (yes/no):");
-            String response = scanner.next().trim().toLowerCase();
-            playagain = response.equals("yes");
         }
-        scanner.close();
+        System.out.println("Sorry, you finished your attempts! The number is " + numberguess );
+        sc.close();
     }
 }
