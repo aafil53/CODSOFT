@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class task3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double balance = 500.00;
+        double balance = 5000.00;
         while (true) {
             System.out.println("Welcome to State Bank Of India!");
             System.out.println("\n1. Check Balance");
